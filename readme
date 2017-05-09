@@ -1,0 +1,56 @@
+
+
+
+Random Number Generator Program Instruction
+
+A. code structure
+
+ubuntu@ip-172-31-27-49:~/webservertest$ tree
+.
+├── main.js
+├── router.js
+└── versions
+    └── v1.js
+1 directory, 3 files
+
+B. code implementation
+
+- main.js
+Main processing script. 
+In this script:
+	- create http server
+	- parse the url
+	- call router.js to handle versions
+	- handle all of the exceptions
+
+- router.js
+Version handle script.
+In this script:
+	- parse the path to find the version
+	- call corresponding version file in ./versions/
+
+- v1.js
+Random function generation script.
+In this script:
+	- parse the path to call function
+	- generate random
+	- print random as Json format
+
+C. execute the program (already run)
+
+$ sudo node main.js 
+
+D. test the program
+
+- positive testing
+
+http://34.209.73.13:8000/v1/random
+
+- negative testing
+
+http://34.209.73.13:8000/v2/random
+
+http://34.209.73.13:8000/v1
+
+http://34.209.73.13:8000/v1/login
+
